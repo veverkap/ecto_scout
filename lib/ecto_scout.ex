@@ -13,6 +13,9 @@ defmodule EctoScout do
 
   """
   def hello do
+    IO.puts "DUDE"
+    { :ok, details } = Ecto.Adapters.SQL.query(EctoScout.Repo, "SELECT COUNT(*) FROM `campaigns`", [], [log: true]) 
+    IO.inspect details
     :world
   end
 end
